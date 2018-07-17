@@ -1,0 +1,4 @@
+django_rok/__pycache__
+django_rok.egg-info/
+.git/
+*.pyc
