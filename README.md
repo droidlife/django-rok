@@ -28,11 +28,71 @@ Install using `pip`...
     ROK_PASSWORD="root" # remote host password
     ```
 
-3. Instead of djnago runsver run this command::
+3. Instead of django runsver run this command::
     ```python
     python manage.py runrok
     ```    
-    This will run the rokserver as well as the django development server
+    This will run the rokserver as well as the django development server.
 
 
 4. Now go to the url ```http://192.168.1.1:9000``` to access your local development server publicaly.
+
+
+# Additional Configuration
+1. Private key can be used to connect to the remote server. To do so add the following parameter to settings.py
+     ```python
+    ROK_KEY="/path/to/private/key" # private key for remote host connection
+    ROK_PASSWORD=None # remote host password is not required since we are using private key
+    ```
+    
+ 2. Rokserver can be started standalone without invoking the django development server. Thing can be achieved by setting env variable
+     ```python
+    ROK_ENV="PRODUCTION"
+    ```
+3. Local port for rokserver can be changed by passing the ```-lp``` parameter
+    ```
+    python manage.py runrok -lp 8080
+    ```
+    
+# Command Line Usage
+  You can also pass the parameters through command line. 
+  
+  <b>Example:</b>
+  ```
+  python manage.py runrok -r 192.168.1.1 -rp 9000 -u 'root' -p 'root'
+  ```
+  
+  To check the command line parameters run ```python manage.py runrok --help```
+  
+  ```
+  usage: manage.py runrok [-h] [--version] [-v {0,1,2,3}] [--settings SETTINGS]
+                        [--pythonpath PYTHONPATH] [--traceback] [--no-color]
+                        [-lp LOCAL_PORT] [-rp REMOTE_PORT] [-r REMOTE_HOST]
+                        [-u USER_NAME] [-p PASSWORD] [-key PKEY] [-env ENV]
+
+Command to run runrok server along with django development server
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --version             show program's version number and exit
+  -v {0,1,2,3}, --verbosity {0,1,2,3}
+                        Verbosity level; 0=minimal output, 1=normal output,
+                        2=verbose output, 3=very verbose output
+  --settings SETTINGS   The Python path to a settings module, e.g.
+                        "myproject.settings.main". If this isn't provided, the
+                        DJANGO_SETTINGS_MODULE environment variable will be
+                        used.
+  --pythonpath PYTHONPATH
+                        A directory to add to the Python path, e.g.
+                        "/home/djangoprojects/myproject".
+  --traceback           Raise on CommandError exceptions
+  --no-color            Don't colorize the command output.
+  -lp LOCAL_PORT        The local port to forward the request.
+  -rp REMOTE_PORT       The remote port for ssh connection.
+  -r REMOTE_HOST        The remote host for ssh connection
+  -u USER_NAME          The username for remote host
+  -p PASSWORD           The password for remote host(If there)
+  -key PKEY             The private key for remote host(If there)
+  -env ENV              Which env the server is running on
+```
+ 
