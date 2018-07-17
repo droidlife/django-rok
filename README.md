@@ -2,15 +2,15 @@
 > Public url for exposing your local web server
 
 # Overview
-Django-rok is an ssh tunnel tool that provide a public url for your local web server and help in testing webhook integreations.
-The django-rok is inspired from <a href="https://ngrok.com/" traget="_blank">ngrock</a> and built using <a href="http://www.paramiko.org/" targat="_blank">paramiko</a>. 
+Django-rok is an ssh tunnel tool that provide a public url for your local web server and help in testing webhook integrations.
+The django-rok is inspired from <a href="https://ngrok.com/" traget="_blank">ngrock</a> and built using <a href="http://www.paramiko.org/" targat="_blank">paramiko</a>.
 
 # Installation
 
 Install using `pip`...
 
     pip install django-rok
-    
+
 
 # Quick Start
 1. Add <b>"django_rok"</b> to your INSTALLED_APPS setting like this::
@@ -44,7 +44,7 @@ Install using `pip`...
     ROK_KEY="/path/to/private/key" # private key for remote host connection
     ROK_PASSWORD=None # remote host password is not required since we are using private key
     ```
-    
+
  2. Rokserver can be started standalone without invoking the django development server. Thing can be achieved by setting env variable
      ```python
     ROK_ENV="PRODUCTION"
@@ -53,17 +53,17 @@ Install using `pip`...
     ```
     python manage.py runrok -lp 8080
     ```
-    
+
 # Command Line Usage
-  You can also pass the parameters through command line. 
-  
+  You can also pass the parameters through command line.
+
   <b>Example:</b>
   ```
   python manage.py runrok -r 192.168.1.1 -rp 9000 -u 'root' -p 'root'
   ```
-  
+
   To check the command line parameters run ```python manage.py runrok --help```
-  
+
   ```
   usage: manage.py runrok [-h] [--version] [-v {0,1,2,3}] [--settings SETTINGS]
                         [--pythonpath PYTHONPATH] [--traceback] [--no-color]
@@ -95,4 +95,3 @@ optional arguments:
   -key PKEY             The private key for remote host(If there)
   -env ENV              Which env the server is running on
 ```
- 

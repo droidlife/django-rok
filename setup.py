@@ -8,7 +8,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='django-rok',
-    version='0.1',
+    version='1.0',
     packages=find_packages(),
     include_package_data=True,
     license='MIT',
@@ -21,10 +21,13 @@ setup(
         'Environment :: Web Environment',
         'Framework :: Django',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: MIT',
+        'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3.5',
     ],
+    install_requires=[
+          'paramiko>=2.4.1'
+      ]
 )
