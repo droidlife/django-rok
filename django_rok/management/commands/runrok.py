@@ -86,7 +86,7 @@ class Command(BaseCommand):
                 args_dict['env'] = options['env']
 
         if not os.environ.get('RUN_MAIN', False):
-            print(bcolors.OKBLUE + 'Using ' + args_dict['env'] + 'environment.' + bcolors.ENDC)
+            print(bcolors.OKBLUE + 'Using ' + args_dict['env'] + ' environment.' + bcolors.ENDC)
 
         return args_dict
 
