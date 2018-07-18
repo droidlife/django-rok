@@ -37,6 +37,20 @@ Install using `pip`...
 
 4. Now go to the url ```http://192.168.1.1:9000``` to access your local development server publicaly.
 
+# Debugging
+
+1. It's possible that your remote host by default doesn't allow port forwarding. To enable this open ```/etc/ssh/sshd_config``` 
+    ```
+    $ sudo vim /etc/ssh/sshd_config
+    ```
+    Add the following line somewhere in that config file. Make sure you add it only once!
+    ```
+    GatewayPorts yes
+    ```
+    Now restart the service
+    ```
+    $ sudo service ssh restart
+    ```
 
 # Additional Configuration
 1. Private key can be used to connect to the remote server. To do so add the following parameter to settings.py
