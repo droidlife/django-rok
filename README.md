@@ -127,6 +127,6 @@ To fix a bug or enhance an existing module, follow these steps:
 
 ## Bug / Feature Request
 
-If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/droidlife/django-rok/issues/new) by including your search query and the expected result.
+If you find a bug kindly open an issue [here](https://github.com/droidlife/django-rok/issues/new) by including the error thrown.
 
-If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/droidlife/django-rok/issues/new). Please include sample queries and their corresponding results.
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/droidlife/django-rok/issues/new).
