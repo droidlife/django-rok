@@ -37,7 +37,7 @@ Install using `pip`...
 
 4. Now go to the url ```http://192.168.1.1:9000``` to access your local development server publicaly.
 
-# Debugging
+## Debugging
 
 1. It's possible that your remote host by default doesn't allow port forwarding. To enable this open ```/etc/ssh/sshd_config``` 
     ```
@@ -52,7 +52,9 @@ Install using `pip`...
     $ sudo service ssh restart
     ```
 
-# Additional Configuration
+2. Make sure that the remote port specified is open on the server.
+
+## Additional Configuration
 1. Private key can be used to connect to the remote server. To do so add the following parameter to settings.py
      ```python
     ROK_KEY="/path/to/private/key" # private key for remote host connection
@@ -68,7 +70,7 @@ Install using `pip`...
     python manage.py runrok -lp 8080
     ```
 
-# Command Line Usage
+## Command Line Usage
   You can also pass the parameters through command line.
 
   <b>Example:</b>
@@ -109,3 +111,22 @@ optional arguments:
   -key PKEY             The private key for remote host(If there)
   -env ENV              Which env the server is running on
 ```
+
+## Development
+Want to contribute? Great!
+
+To fix a bug or enhance an existing module, follow these steps:
+
+- Fork the repo
+- Create a new branch (`git checkout -b improve-feature`)
+- Make the appropriate changes in the files
+- Add changes to reflect the changes made
+- Commit your changes (`git commit -am 'Improve feature'`)
+- Push to the branch (`git push origin improve-feature`)
+- Create a Pull Request 
+
+## Bug / Feature Request
+
+If you find a bug (the website couldn't handle the query and / or gave undesired results), kindly open an issue [here](https://github.com/droidlife/django-rok/issues/new) by including your search query and the expected result.
+
+If you'd like to request a new function, feel free to do so by opening an issue [here](https://github.com/droidlife/django-rok/issues/new). Please include sample queries and their corresponding results.
