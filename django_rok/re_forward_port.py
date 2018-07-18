@@ -2,7 +2,7 @@ import socket
 import select
 import threading
 
-g_verbose = True
+g_verbose = False
 
 
 def handler(chan, host, port):
